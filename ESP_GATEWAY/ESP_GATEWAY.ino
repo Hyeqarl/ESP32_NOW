@@ -91,8 +91,8 @@ void loop() {
       // Specify content-type header
       http.addHeader("Content-Type", "application/x-www-form-urlencoded");
       // Data to send with HTTP POST
-      String temperatureData = "api_key=" + apiKey + "&field1=" + String(random(40));
-      String humidityData = "api_key=" + apiKey + "&field2=" + String(random(40));           
+      String temperatureData = "api_key=" + apiKey + "&field1=" + String(dhtData.temperature);
+      String humidityData = "api_key=" + apiKey + "&field2=" + String(dhtData.humidity);           
       // Send HTTP POST request
       int temperatureCode = http.POST(temperatureData);
       int humidityCode = http.POST(humidityData);
